@@ -95,7 +95,9 @@ class MealTableViewController: UITableViewController {
 
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+        let mealTemp = self.meals[fromIndexPath.row]
+        self.meals.removeAtIndex(fromIndexPath.row)
+        self.meals.insert(mealTemp, atIndex: toIndexPath.row)
     }
 
     // Override to support conditional rearranging of the table view.
